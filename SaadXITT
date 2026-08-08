@@ -324,7 +324,7 @@ function criarMenu()
     criarToggle("ESP Box", 68, "ESPBox")
     criarToggle("ESP Line", 90, "ESPLine")
     
-    -- SLIDERS: FOV fica onde está, SMOOTH deslocado +5 pra direita
+    -- SLIDERS
     createSlider(content, 114, "FOV", 10, 300, "FOV", false, 0)
     createSlider(content, 144, "Smooth", 0.1, 1.0, "Smooth", true, 5)
     
@@ -592,4 +592,6 @@ local function updateESPLine(player)
     end
     
     local targetPart = character:FindFirstChild("HumanoidRootPart") or character:FindFirstChild("Head")
-    if not targetPa
+    if not targetPart then
+        espData.line.Visible = false
+        
